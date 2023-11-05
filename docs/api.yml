@@ -1,0 +1,243 @@
+openapi: "3.0.2"
+info:
+  title: Portfolio
+  version: "1.0"
+servers:
+  - url: https://api.server.test/v1
+  - url: /v1
+paths:
+  /profile:
+    get:
+      summary: Get the profile
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Profile"
+    patch:
+      summary: Update the profile
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Profile"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MutateStatus"
+        "401":
+          description: Not authenticated
+
+  /portfolios:
+    get:
+      summary: Get the portfolios
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/Portfolio"
+    post:
+      summary: Create a new portfolio
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Portfolio"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MutateStatus"
+        "401":
+          description: Not authenticated
+
+  /portfolios/{id}:
+    get:
+      summary: Get the portfolio
+      parameters:
+        - name: id
+          in: path
+          description: Portfolio ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: "#/components/schemas/Portfolio"
+    put:
+      summary: Update the portfolio
+      parameters:
+        - name: id
+          in: path
+          description: Portfolio ID
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Portfolio"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MutateStatus"
+        "401":
+          description: Not authenticated
+    delete:
+      summary: Delete the portfolio
+      parameters:
+        - name: id
+          in: path
+          description: Portfolio ID
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Portfolio"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MutateStatus"
+        "401":
+          description: Not authenticated
+
+  /login:
+    post:
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlBpY2hldCBJdG5nYW0iLCJpYXQiOjE1MTYyMzkwMjJ9.mVMnU3cgNFO27o_i1xxiYptVpa3ruv1H_mKJD3qzfj0
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Profile:
+      type: object
+      properties:
+        overallSkills:
+          type: array
+          items:
+            type: string
+        experiences:
+          type: array
+          items:
+            type: object
+            properties:
+              logo:
+                type: string
+              title:
+                type: string
+              company:
+                type: string
+              type:
+                type: string
+              start:
+                type: string
+              end:
+                type: string
+                nullable: true
+              skills:
+                type: array
+                items:
+                  type: string
+              detail:
+                type: string
+    Portfolio:
+      type: object
+      properties:
+        id:
+          type: string
+        cover:
+          type: string
+        images:
+          type: array
+          items:
+            type: string
+        skills:
+          type: array
+          items:
+            type: string
+        title:
+          type: string
+        content:
+          type: string
+        excerpt:
+          type: string
+        publishedAt:
+          type: string
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    MutateStatus:
+      type: object
+      properties:
+        status:
+          type: boolean
