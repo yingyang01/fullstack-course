@@ -17,7 +17,7 @@ export default ({ profileService }, config) => {
 
         const profile = await profileService.getProfile();
 
-        res.status(200).json(profile);
+        res.status(200).json({ data: profile });
     }
 
     async function updateProfile(req, res) {
