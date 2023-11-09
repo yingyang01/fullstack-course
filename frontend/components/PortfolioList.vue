@@ -25,7 +25,10 @@ defineEmits(['more']);
                 Add
             </BaseLink>
         </h2>
-        <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <ul
+            v-if="portfolios.length > 0"
+            class="grid grid-cols-1 md:grid-cols-2 gap-5"
+        >
             <li
                 v-for="portfolio in portfolios"
                 :key="portfolio.id"
@@ -52,6 +55,12 @@ defineEmits(['more']);
                 </NuxtLink>
             </li>
         </ul>
+        <span
+            v-else
+            class="text-grey"
+        >
+            None
+        </span>
         <BaseLink
             v-if="isGettingPortfolios"
             size="small"

@@ -21,7 +21,10 @@ defineEmits(['edit', 'more']);
             Edit
         </BaseButton>
     </h2>
-    <ol class="space-y-6">
+    <ol
+        v-if="experiences.length > 0"
+        class="space-y-6"
+    >
         <li
             v-for="(experience, index) in experiences"
             :key="experience.id"
@@ -31,6 +34,12 @@ defineEmits(['edit', 'more']);
             </div>
         </li>
     </ol>
+    <span
+        v-else
+        class="text-grey"
+    >
+        None
+    </span>
     <BaseButton
         v-if="hasMoreExperiences"
         @click="$emit('more')"
@@ -40,5 +49,4 @@ defineEmits(['edit', 'more']);
         class="block w-full mt-5"
     >
         Load More
-    </BaseButton>
-</template>
+</BaseButton></template>
