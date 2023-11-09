@@ -57,7 +57,7 @@ export const useProfileStore = defineStore('profile', () => {
         const authStore = useAuthStore();
 
         try {
-            const { data: response, error, status } = await saveProfileAPI(draftedSkills, authStore.token);
+            const { data: response, error, status } = await saveProfileAPI({ overallSkills: draftedSkills.skills }, authStore.token);
             if (status == 'error') {
                 throw new Error(error);
             }

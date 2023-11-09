@@ -1,5 +1,5 @@
 export const errorHandler = (err, req, res, next) => {
-    if (err.message && err.message.startsWith('ValidationError')) {
+    if (err.name && err.name == 'ValidationError') {
         res.status(400).json({
             error: err.message
         });

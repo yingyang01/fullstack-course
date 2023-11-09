@@ -23,5 +23,8 @@ const onSubmit = async (values) => {
 <template>
     <main class="m-auto w-[300px]">
         <LoginForm @submit="onSubmit" />
+        <BaseErrorMessage>
+            {{ store.userError }}
+        </BaseErrorMessage>
     </main>
 </template>

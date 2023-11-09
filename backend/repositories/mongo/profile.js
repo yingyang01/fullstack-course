@@ -19,6 +19,14 @@ export default (connection) => {
         ]
     }));
 
+    function toProfile(profile) {
+        return {
+            id: profile.id,
+            overallSkills: profile.overallSkills,
+            experiences: profile.experiences,
+        }
+    }
+
 
     async function getProfile() {
         let profile;
@@ -29,7 +37,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return profile;
+        return toProfile(profile);
     }
 
     async function updateProfile(newProfile) {
@@ -49,7 +57,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return profile;
+        return toProfile(profile);
     }
 
     return {

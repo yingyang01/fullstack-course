@@ -1,5 +1,5 @@
 export function loginAPI(username, password) {
-    return useFetchAPI('/login', {
+    return useFetchAPI('/auth/login', {
         method: 'post',
         body: {
             username,

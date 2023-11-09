@@ -63,7 +63,7 @@ export default ({ portfolioService }, config) => {
         const result = await portfolioService.deletePortfolio(params.id);
 
         res.status(200).json({
-            status: result.deletedCount > 0,
+            status: result,
         });
     }
 

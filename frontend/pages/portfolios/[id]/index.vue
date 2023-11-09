@@ -12,6 +12,13 @@ if (authStore.canEdit && typeof route.query.edit != 'undefined') {
 
 await store.getPortfolio(route.params.id);
 
+if (!store.portfolio) {
+    throw createError({
+        statusCode: 404,
+        statusMessage: 'Not found this portfolio.'
+    })
+}
+
 useHead({
     title: `${store.portfolio.title} | Pichet Itngam`,
     meta: [

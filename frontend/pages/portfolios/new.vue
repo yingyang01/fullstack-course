@@ -19,7 +19,7 @@ useHead({
     <PortfolioForm
         :portfolio="store.portfolio"
         :can-delete="authStore.canEdit"
-        @submit="store.savePortfolio"
+        @submit="store.createPortfolio"
         @cancel="store.enterViewMode"
         @delete="store.deletePortfolio(route.params.id)"
     />

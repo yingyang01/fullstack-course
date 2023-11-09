@@ -18,74 +18,48 @@ export default ({ portfolioRepo }) => {
     async function getPortfolios(page, limit) {
         let portfolios = [];
 
-        try {
-            const sanitizedPage = Math.min(page, 1);
-            const sanitizedLimit = Math.min(limit, 10);
-            const offset = (sanitizedPage - 1) * sanitizedLimit;
+        const sanitizedPage = Math.min(page, 1);
+        const sanitizedLimit = Math.min(limit, 10);
+        const offset = (sanitizedPage - 1) * sanitizedLimit;
 
-            portfolios = await portfolioRepo.getPortfolios(offset, sanitizedLimit);
-        } catch (error) {
-            throw new Error(error);
-        }
+        portfolios = await portfolioRepo.getPortfolios(offset, sanitizedLimit);
 
         return portfolios;
     }
 
     async function getPortfolio(id) {
-        let portfolio;
-
-        try {
-            portfolio = await portfolioRepo.getPortfolio(id);
-        } catch (error) {
-            throw new Error(error);
-        }
+        const validatedId = await idValidationSchema.validate(id);
+        const portfolio = await portfolioRepo.getPortfolio(validatedId);
 
         return portfolio;
     }
 
     async function createPortfolio(draftedPortfolio) {
-        let portfolio;
+        const validatedPortfolio = await validateSchema.validate(draftedPortfolio);
 
-        try {
-            const validatedPortfolio = await validateSchema.validate(draftedPortfolio);
+        const sanitizedPortfolio = sanitizePortfolio(validatedPortfolio);
 
-            const sanitizedPortfolio = sanitizePortfolio(validatedPortfolio);
-
-            portfolio = await portfolioRepo.createPortfolio(sanitizedPortfolio);
-        } catch (error) {
-            throw new Error(error);
-        }
+        const portfolio = await portfolioRepo.createPortfolio(sanitizedPortfolio);
 
         return portfolio;
     }
 
     async function updatePortfolio(id, draftedPortfolio) {
-        let portfolio;
+        const validatedPortfolio = await validateSchema.validate(draftedPortfolio);
+        const validatedId = await idValidationSchema.validate(id);
 
-        try {
-            const validatedPortfolio = await validateSchema.validate(draftedPortfolio);
-            const validatedId = await idValidationSchema.validate(id);
+        const sanitizedPortfolio = sanitizePortfolio(validatedPortfolio);
 
-            const sanitizedPortfolio = sanitizePortfolio(validatedPortfolio);
-
-            portfolio = await portfolioRepo.updatePortfolio(validatedId, sanitizedPortfolio);
-        } catch (error) {
-            throw new Error(error);
-        }
+        const portfolio = await portfolioRepo.updatePortfolio(validatedId, sanitizedPortfolio);
 
         return portfolio;
     }
 
     async function deletePortfolio(id) {
-        let result;
 
-        try {
-            const validatedId = await idValidationSchema.validate(id);
+        const validatedId = await idValidationSchema.validate(id);
 
-            result = await portfolioRepo.deletePortfilio(validatedId);
-        } catch (error) {
-            throw new Error(error);
-        }
+        const result = await portfolioRepo.deletePortfilio(validatedId);
 
         return result;
     }

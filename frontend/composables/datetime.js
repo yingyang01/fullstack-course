@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const useYearOptions = (startYear) => {
     const currentYear = new Date().getFullYear();
     const years = [];
@@ -29,4 +31,16 @@ export const useMonthOptions = () => {
     }
 
     return months;
+}
+
+export const useDateRangeDiff = (startDate, endDate) => {
+    const dynamicEndDate = endDate ?? new Date();
+
+    const diffInMonth = Math.ceil(moment(dynamicEndDate).diff(moment(startDate), 'months', true));
+    const diffInYear = Math.ceil(moment(dynamicEndDate).diff(moment(startDate), 'years', true));
+
+    return {
+        diffInMonth,
+        diffInYear,
+    }
 }

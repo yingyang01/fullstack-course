@@ -10,6 +10,19 @@ export default (connection) => {
         publishedAt: Date,
     }));
 
+    function toPortfolio(portfolio) {
+        return {
+            id: portfolio.id,
+            cover: portfolio.cover,
+            images: portfolio.images,
+            title: portfolio.title,
+            content: portfolio.content,
+            excerpt: portfolio.content.substring(0, 80),
+            skills: portfolio.skills,
+            publishedAt: portfolio.publishedAt,
+        }
+    }
+
     async function getPortfolios(offset, limit) {
         let portfolios;
 
@@ -19,7 +32,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return portfolios;
+        return portfolios.map(portfolio => toPortfolio(portfolio));
     }
 
     async function getPortfolio(id) {
@@ -31,7 +44,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return portfolio;
+        return toPortfolio(portfolio);
     }
 
     async function createPortfolio(draftedPortfolio) {
@@ -44,7 +57,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return portfolio;
+        return toPortfolio(portfolio);
     }
 
     async function updatePortfolio(id, draftedPortfolio) {
@@ -61,7 +74,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return portfolio;
+        return toPortfolio(portfolio);
     }
 
     async function deletePortfilio(id) {
@@ -73,7 +86,7 @@ export default (connection) => {
             throw new Error(error);
         }
 
-        return result;
+        return result.deletedCount > 0;
     }
 
     return {

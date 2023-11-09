@@ -9,7 +9,16 @@ const experienceType = computed(() => useExperienceType(props.experience.type));
 
 const start = computed(() => moment(props.experience.start).format('MMM YYYY'))
 const end = computed(() => props.experience.end ? moment(props.experience.end).format('MMM YYYY') : 'Present')
-const diff = computed(() => props.experience.end ? Math.ceil(moment(props.experience.end).diff(moment(props.experience.start), 'months', true)) : Math.ceil(moment(new Date()).diff(moment(props.experience.start), 'months', true)))
+const diff = computed(() => {
+    const { diffInYear, diffInMonth } = useDateRangeDiff(props.experience.start, props.experience.end);
+
+    if (diffInYear > 1) {
+        return `${diffInYear} year(s)`;
+    }
+
+    return `${diffInMonth} month(s)`;
+
+})
 </script>
 
 <template>
@@ -33,7 +42,7 @@ const diff = computed(() => props.experience.end ? Math.ceil(moment(props.experi
                 </div>
                 <div>
                     <span>
-                        {{ start }} - {{ end }} · {{ diff }} month(s)</span>
+                        {{ start }} - {{ end }} · {{ diff }}</span>
                 </div>
 
                 <div class="py-3 md:hidden">

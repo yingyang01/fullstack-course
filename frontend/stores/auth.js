@@ -8,6 +8,7 @@ export const useAuthStore = defineStore('auth', () => {
     });
 
     const isLoggingIn = ref(false);
+    const userError = ref('');
 
     const token = computed(() => user.value.token);
     const canEdit = computed(() => user.value.loggedIn)
@@ -15,24 +16,25 @@ export const useAuthStore = defineStore('auth', () => {
     async function login(username, password) {
         isLoggingIn.value = true;
 
-        try {
-            const { data: response, error, status } = await loginAPI(username, password);
-            if (status == 'error') {
-                throw new Error(error);
-            }
 
-            user.value = {
-                loggedIn: true,
-                token: response.value.token,
-            };
-
-            const token = useCookie('token');
-            token.value = response.value.token;
-        } catch (error) {
-            throw new Error(error);
-        } finally {
-            isLoggingIn.value = false;
+        const { data: response, error, status } = await loginAPI(username, password);
+        if (status.value == 'error') {
+            useCustomError(error.value, (error) => {
+                userError.value = error.data.error;
+            });
         }
+
+        user.value = {
+            loggedIn: true,
+            token: response.value.token,
+        };
+
+        const token = useCookie('token');
+
+        token.value = response.value.token;
+
+        isLoggingIn.value = false;
+        userError.value = '';
 
         return true;
     }
@@ -48,6 +50,7 @@ export const useAuthStore = defineStore('auth', () => {
         user,
         token,
         canEdit,
+        userError,
         login,
         setUser,
     }
