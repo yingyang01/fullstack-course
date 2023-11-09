@@ -23,12 +23,12 @@ export const usePortfolioStore = defineStore('portfolio', () => {
         try {
             const { data: response, error, status } = await getPortfolioAPI(id);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             portfolio.value = response.value;
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 
@@ -38,7 +38,7 @@ export const usePortfolioStore = defineStore('portfolio', () => {
         try {
             const { data: response, error, status } = await createPortfolioAPI(draftedPortfolio, authStore.token);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             if (response.value.status) {
@@ -50,7 +50,7 @@ export const usePortfolioStore = defineStore('portfolio', () => {
             }
 
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 
@@ -60,7 +60,7 @@ export const usePortfolioStore = defineStore('portfolio', () => {
         try {
             const { data: response, error, status } = await savePortfolioAPI(draftedPortfolio.id, draftedPortfolio, authStore.token);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             if (response.value.status) {
@@ -70,7 +70,7 @@ export const usePortfolioStore = defineStore('portfolio', () => {
             }
 
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 
@@ -80,7 +80,7 @@ export const usePortfolioStore = defineStore('portfolio', () => {
         try {
             const { data: response, error, status } = await deletePortfolioAPI(id, authStore.token);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             if (response.value.status) {
@@ -90,7 +90,7 @@ export const usePortfolioStore = defineStore('portfolio', () => {
             }
 
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 

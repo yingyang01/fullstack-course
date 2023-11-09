@@ -16,7 +16,7 @@ export const useSkillsStore = defineStore('skills', () => {
         try {
             const { data: response, error, status } = await saveProfileAPI(draftedSkills, authStore.token);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             if (response.value.status) {
@@ -26,7 +26,7 @@ export const useSkillsStore = defineStore('skills', () => {
             }
 
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 

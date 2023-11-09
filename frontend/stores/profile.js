@@ -23,31 +23,31 @@ export const useProfileStore = defineStore('profile', () => {
         try {
             const { data: response, error, status } = await getProfileAPI();
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             profile.value = response.value;
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 
-    async function getPortfolios(page, offset) {
+    async function getPortfolios(page, limit) {
         isGettingPortfolios.value = true;
 
         try {
             const { data: response, error, status } = await getPortfoliosAPI(page, offset);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
-            if (response.value.length < offset) {
+            if (response.value.length < limit) {
                 hasMorePortfolios.value = false;
             }
 
             portfolios.value = response.value;
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         } finally {
             isGettingPortfolios.value = false;
         }
@@ -59,7 +59,7 @@ export const useProfileStore = defineStore('profile', () => {
         try {
             const { data: response, error, status } = await saveProfileAPI(draftedSkills, authStore.token);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             if (response.value.status) {
@@ -69,7 +69,7 @@ export const useProfileStore = defineStore('profile', () => {
             }
 
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 
@@ -79,7 +79,7 @@ export const useProfileStore = defineStore('profile', () => {
         try {
             const { data: response, error, status } = await saveProfileAPI(draftedExperiences, authStore.token);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             if (response.value.status) {
@@ -89,7 +89,7 @@ export const useProfileStore = defineStore('profile', () => {
             }
 
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         }
     }
 

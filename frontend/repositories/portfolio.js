@@ -1,8 +1,8 @@
-export function getPortfoliosAPI(page, offset) {
+export function getPortfoliosAPI(page, limit) {
     return useFetchAPI('/portfolios', {
         query: {
             page,
-            offset,
+            limit,
         },
         transform: (response) => response.data,
     });

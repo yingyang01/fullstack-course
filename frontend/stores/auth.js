@@ -18,7 +18,7 @@ export const useAuthStore = defineStore('auth', () => {
         try {
             const { data: response, error, status } = await loginAPI(username, password);
             if (status == 'error') {
-                throw Error(error);
+                throw new Error(error);
             }
 
             user.value = {
@@ -29,7 +29,7 @@ export const useAuthStore = defineStore('auth', () => {
             const token = useCookie('token');
             token.value = response.value.token;
         } catch (error) {
-            throw Error(error);
+            throw new Error(error);
         } finally {
             isLoggingIn.value = false;
         }

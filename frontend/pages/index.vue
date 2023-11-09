@@ -12,16 +12,16 @@ useHead({
     ],
 })
 
-const offset = 8;
+const limit = 8;
 const currentPortfoliosPage = ref(1);
 
 await store.getProfile();
-await store.getPortfolios(currentPortfoliosPage, offset);
+await store.getPortfolios(currentPortfoliosPage, limit);
 
 const onPortfoliosMore = async () => {
     const nextPage = currentPortfoliosPage.value + 1;
 
-    await store.getPortfolios(nextPage, offset);
+    await store.getPortfolios(nextPage, limit);
 
     currentPortfoliosPage.value = nextPage;
 }
