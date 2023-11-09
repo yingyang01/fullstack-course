@@ -36,7 +36,7 @@ export const useProfileStore = defineStore('profile', () => {
         isGettingPortfolios.value = true;
 
         try {
-            const { data: response, error, status } = await getPortfoliosAPI(page, offset);
+            const { data: response, error, status } = await getPortfoliosAPI(page, limit);
             if (status == 'error') {
                 throw new Error(error);
             }
