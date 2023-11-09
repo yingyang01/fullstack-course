@@ -1,9 +1,42 @@
-import { server } from './handlers/server.js';
+import 'dotenv/config';
+import useRepos from '#app/di/repositories';
+import useServices from '#app/di/services';
+import useServers from '#app/di/servers';
 
-const apiServer = server({
-    port: 8000,
+const { profileRepo, userRepo, portfolioRepo } = useRepos({
+    db: {
+        mongo: {
+            uri: process.env.MONGO_URI,
+        }
+    }
 });
 
-apiServer.setup();
+const { profileService, authService, portfolioService } = useServices({
+    profileRepo,
+    userRepo,
+    portfolioRepo,
+}, {
+    jwt: {
+        secret: process.env.JWT_SECRET,
+        algorithms: process.env.JWT_ALGORITHMS.split(','),
+    },
+});
 
-apiServer.run();
+const servers = useServers({
+    profileService,
+    authService,
+    portfolioService,
+}, {
+    http: {
+        port: process.env.APP_PORT,
+        jwt: {
+            secret: process.env.JWT_SECRET,
+            algorithms: process.env.JWT_ALGORITHMS.split(','),
+        },
+        cors: {
+            origin: process.env.CORS_ORIGIN,
+        },
+    },
+});
+
+servers.run();
