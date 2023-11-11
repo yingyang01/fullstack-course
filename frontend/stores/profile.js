@@ -41,11 +41,13 @@ export const useProfileStore = defineStore('profile', () => {
                 throw new Error(error);
             }
 
-            if (response.value.length < limit) {
-                hasMorePortfolios.value = false;
-            }
+            hasMorePortfolios.value = response.value.length >= limit;
 
-            portfolios.value = response.value;
+            if (page == 1) {
+                portfolios.value = response.value;
+            } else {
+                portfolios.value = [...portfolios.value, ...response.value];
+            }
         } catch (error) {
             throw new Error(error);
         } finally {

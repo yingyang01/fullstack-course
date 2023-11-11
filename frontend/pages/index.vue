@@ -12,11 +12,11 @@ useHead({
     ],
 })
 
-const limit = 8;
+const limit = 2;
 const currentPortfoliosPage = ref(1);
 
 await store.getProfile();
-await store.getPortfolios(currentPortfoliosPage, limit);
+await store.getPortfolios(currentPortfoliosPage.value, limit);
 
 const onPortfoliosMore = async () => {
     const nextPage = currentPortfoliosPage.value + 1;
@@ -55,6 +55,7 @@ const onPortfoliosMore = async () => {
                     :has-more-experiences="store.hasMoreExperiences"
                     :is-experience-visible="store.isExperienceVisible"
                     @edit="store.enterExperiencesEditMode"
+                    @more="store.increaseVisibleExperences(8)"
                 />
             </template>
             <template #edit>

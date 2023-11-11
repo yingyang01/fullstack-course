@@ -17,10 +17,10 @@ useHead({
 
 <template>
     <PortfolioForm
-        :portfolio="store.portfolio"
+        :portfolio="store.newPortfolio()"
         :can-delete="authStore.canEdit"
         @submit="store.createPortfolio"
-        @cancel="store.enterViewMode"
+        @cancel="navigateTo('/')"
         @delete="store.deletePortfolio(route.params.id)"
     />
 </template>

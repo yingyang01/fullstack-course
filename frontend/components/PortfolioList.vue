@@ -47,7 +47,7 @@ defineEmits(['more']);
                     <BaseCard
                         :key="portfolio.id"
                         :title="portfolio.title"
-                        :excerpt="portfolio.excerpt"
+                        :excerpt="portfolio.excerpt + '...'"
                         :cover="portfolio.cover"
                         :badges="portfolio.skills"
                         :datetime="moment(portfolio.publishedAt).format('MMM YYYY')"
@@ -61,25 +61,27 @@ defineEmits(['more']);
         >
             None
         </span>
-        <BaseLink
+        <BaseButton
             v-if="isGettingPortfolios"
             size="small"
             variant="disabled"
             target="blank"
+            type="button"
             class="block w-full mt-5"
             disabled="true"
         >
             Loading
-        </BaseLink>
-        <BaseLink
+        </BaseButton>
+        <BaseButton
             v-else-if="hasMorePortfolios"
             @click="$emit('more')"
             size="small"
             variant="secondary"
             target="blank"
+            type="button"
             class="block w-full mt-5"
         >
             Load More
-        </BaseLink>
+        </BaseButton>
     </section>
 </template>

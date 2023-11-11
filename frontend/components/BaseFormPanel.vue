@@ -11,6 +11,7 @@ defineEmits(['cancel', 'save']);
         <BaseButton
             size="small"
             variant="secondary"
+            type="button"
             @click="$emit('cancel')"
         >
             Cancel

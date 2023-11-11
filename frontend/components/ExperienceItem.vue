@@ -46,13 +46,13 @@ const diff = computed(() => {
                 </div>
 
                 <div class="py-3 md:hidden">
-                    <span class="whitespace-pre">{{ experience.detail }}</span>
+                    <p class="whitespace-pre-wrap">{{ experience.detail }}</p>
                 </div>
                 <BaseBadgeList :badges="experience.skills" />
             </div>
         </div>
         <div class="hidden md:block md:flex-1">
-            <span class="whitespace-pre">{{ experience.detail }}</span>
+            <p class="whitespace-pre-wrap">{{ experience.detail }}</p>
         </div>
     </div>
 </template>

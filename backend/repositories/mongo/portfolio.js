@@ -70,7 +70,6 @@ export default (connection) => {
                 new: true,
             });
         } catch (error) {
-            console.log('error', error);
             throw new Error(error);
         }
 

@@ -51,7 +51,7 @@ defineEmits(['edit'])
             <BaseBadgeList :badges="portfolio.skills" />
             <span>{{ moment(portfolio.publishedAt).format('MMM YYYY') }}</span>
         </div>
-        <div class="whitespace-pre">
+        <div class="whitespace-pre-wrap">
             {{ portfolio.content }}
         </div>
     </section>

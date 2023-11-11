@@ -53,7 +53,6 @@ export default (connection) => {
                 upsert: true,
             });
         } catch (error) {
-            console.log('error', error);
             throw new Error(error);
         }
 

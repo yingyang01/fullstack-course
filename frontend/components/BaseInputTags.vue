@@ -31,6 +31,7 @@ const onTagsChanged = (tags) => {
     <div :class="style">
         <TagsInput
             @on-tags-changed="onTagsChanged"
+            :add-tag-on-keys="[13, 188]"
             :tags="value"
             v-bind="$attrs"
         />
