@@ -1,7 +1,9 @@
 <script setup>
-// TODO: 4. รู้จัก useRoute(); และ route.params;
+const route = useRoute();
+
+console.log(route.params.id)
 </script>
 
 <template>
-    <!-- TODO: 3. หน้า Portfolio -->
+    หน้า Portfolio
 </template>

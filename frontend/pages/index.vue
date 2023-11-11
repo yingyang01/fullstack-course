@@ -1,3 +1,3 @@
 <template>
-    <!-- TODO: 1. หน้าแรก -->>
+    หน้าแรก
 </template>
