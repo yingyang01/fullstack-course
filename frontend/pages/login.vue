@@ -8,7 +8,6 @@ useHead({
 });
 
 const onSubmit = async (values) => {
-    // TODO: 8. ทดสอบ
     console.log('values', values);
 }
 </script>

@@ -17,19 +17,17 @@ const onSubmit = handleSubmit(values => {
         class="space-y-3"
     >
         <div>
-            <!-- TODO: 6. มาใช้กับ username -->
-            <!-- <BaseInput
+            <BaseInput
                 name="username"
                 placeholder="Username"
-            /> -->
+            />
         </div>
         <div>
-            <!-- TODO: 7. มาใช้กับ password -->
-            <!-- <BaseInput
+            <BaseInput
                 name="password"
                 type="password"
                 placeholder="Password"
-            /> -->
+            />
         </div>
         <div>
             <BaseButton
