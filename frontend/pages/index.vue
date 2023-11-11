@@ -6,19 +6,18 @@ useHead({
     ],
 })
 
-// TODO: 11. ตัวอย่างค่า exp
-// const experience = {
-//     "logo": "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png",
-//     "title": "Senior Engineering Manager",
-//     "company": "Senestia",
-//     "type": "fulltime",
-//     "start": "2023-08-01T00:00:00.000+07:00",
-//     "end": null,
-//     "skills": [
-//         "Management"
-//     ],
-//     "detail": "- Manage the 6-8 engineers"
-// };
+const experience = {
+    "logo": "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png",
+    "title": "Senior Engineering Manager",
+    "company": "Senestia",
+    "type": "fulltime",
+    "start": "2023-08-01T00:00:00.000+07:00",
+    "end": null,
+    "skills": [
+        "Management"
+    ],
+    "detail": "- Manage the 6-8 engineers"
+};
 </script>
 
 <template>
@@ -30,8 +29,7 @@ useHead({
         />
     </section>
     <section class="mb-10">
-        <!-- TODO: 12. เอา exp มาแสดง -->
-        <!-- <ExperienceItem :experience="experience" /> -->
+        <ExperienceItem :experience="experience" />
     </section>
     <section class="mb-10">
         Portfolio List

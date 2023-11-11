@@ -1,33 +1,28 @@
 <script setup>
-// TODO: 1. install moment
-// import moment from 'moment';
+import moment from 'moment';
 
-// TODO: 2. design props
-// const props = defineProps({
-//     experience: Object,
-// });
+const props = defineProps({
+    experience: Object,
+});
 
-// TODO: 3. design props
-// const experienceType = computed(() => useExperienceType(props.experience.type));
+const experienceType = computed(() => useExperienceType(props.experience.type));
 
-// TODO: 4. ใช้ moment ช่วยแปลงวันเวลาเริ่ม จบ และระยะเวลา
-// const start = computed(() => moment(props.experience.start).format('MMM YYYY'))
-// const end = computed(() => props.experience.end ? moment(props.experience.end).format('MMM YYYY') : 'Present')
-// const diff = computed(() => {
-//     const { diffInYear, diffInMonth } = useDateRangeDiff(props.experience.start, props.experience.end);
+const start = computed(() => moment(props.experience.start).format('MMM YYYY'))
+const end = computed(() => props.experience.end ? moment(props.experience.end).format('MMM YYYY') : 'Present')
+const diff = computed(() => {
+    const { diffInYear, diffInMonth } = useDateRangeDiff(props.experience.start, props.experience.end);
 
-//     if (diffInYear > 1) {
-//         return `${diffInYear} year(s)`;
-//     }
+    if (diffInYear > 1) {
+        return `${diffInYear} year(s)`;
+    }
 
-//     return `${diffInMonth} month(s)`;
+    return `${diffInMonth} month(s)`;
 
-// })
+})
 </script>
 
 <template>
-    <!-- TODO: 6. แสดงผล -->
-    <!-- <div class="md:flex md:space-x-2">
+    <div class="md:flex md:space-x-2">
         <div class="flex space-x-3 md:flex-1">
             <div>
                 <BaseImage
@@ -59,5 +54,5 @@
         <div class="hidden md:block md:flex-1">
             <p class="whitespace-pre-wrap">{{ experience.detail }}</p>
         </div>
-    </div> -->
+    </div>
 </template>
