@@ -1,6 +1,5 @@
 <template>
-    <!-- TODO: 1. สร้าง Footer -->
-    <!-- <footer class="mt-10">
+    <footer class="mt-10">
         <div class="w-full px-3 py-10 bg-quaternary text-center md:py-20">
             <h2 class="text-lg mb-4 font-bold text-primary md:text-2xl md:mb-5">Open to work</h2>
             <BaseLink
@@ -13,5 +12,5 @@
                 <IconEnvelope class="inline-block w-4" />
             </BaseLink>
         </div>
-    </footer> -->
+    </footer>
 </template>
