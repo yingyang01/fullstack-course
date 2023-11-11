@@ -1,20 +1,16 @@
 <script setup>
-// TODO: 1. design props
-// defineProps({
-//     experiences: Array,
-//     canEdit: Boolean,
-//     hasMoreExperiences: Boolean,
-//     isExperienceVisible: Function,
-// });
+defineProps({
+    experiences: Array,
+    canEdit: Boolean,
+    hasMoreExperiences: Boolean,
+    isExperienceVisible: Function,
+});
 
-// TODO: 2. design emits
-// defineEmits(['edit', 'more']);
+defineEmits(['edit', 'more']);
 </script>
 
 <template>
-    <!-- TODO: 3. show -->
-    <!-- TODO: 4. v-for -->
-    <!-- <h2 class="text-xl font-bold mb-3 flex justify-between">
+    <h2 class="text-xl font-bold mb-3 flex justify-between">
         <span>Experiences</span>
         <BaseButton
             v-if="canEdit"
@@ -53,5 +49,5 @@
         class="block w-full mt-5"
     >
         Load More
-    </BaseButton> -->
+    </BaseButton>
 </template>
