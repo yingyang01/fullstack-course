@@ -1,4 +1,4 @@
 <template>
     หน้าแรก
-    <!-- TODO: 4. แสดง Badge List -->
+    <BaseBadgeList :badges="['A', 'B']" />
 </template>
