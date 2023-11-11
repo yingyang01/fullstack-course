@@ -1,4 +1,4 @@
 <template>
     หน้าแรก
-    <BaseBadgeList :badges="['A', 'B']" />
+    <!-- TODO: 5. นำมาใช้งาน และรู้จัก Fallthrough -->
 </template>
