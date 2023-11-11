@@ -28,5 +28,7 @@ const style = computed(() => {
             :class="style"
             v-bind="$attrs"
         />
+        <!-- TODO: 2. show error message -->
+        <!-- <BaseErrorMessage v-if="errorMessage">{{ errorMessage }}</BaseErrorMessage> -->
     </div>
 </template>
