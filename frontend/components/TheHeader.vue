@@ -1,6 +1,5 @@
 <template>
-    <!-- TODO: 1. สร้าง Header -->
-    <!-- <header class="mb-10">
+    <header class="mb-10">
         <div
             class="w-full px-3 py-9 bg-quaternary flex space-x-3.5 md:justify-center md:flex-col md:items-center md:space-x-0">
             <div class="flex-none">
@@ -34,5 +33,5 @@
                 </div>
             </div>
         </div>
-    </header> -->
+    </header>
 </template>
