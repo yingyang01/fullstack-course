@@ -1,19 +1,17 @@
 <script setup>
-// TODO: 4. ใช้งาน composable กับ Link
+const props = defineProps({
+    size: String,
+    variant: String,
+    onClick: Function,
+});
 
-// const props = defineProps({
-//     size: String,
-//     variant: String,
-//     onClick: Function,
-// });
+const elementSizeClass = useActionableSizeClass(props.size);
 
-// const elementSizeClass = useActionableSizeClass(props.size);
-
-// const elementVariantClass = useActionableVariantClass(props.variant);
+const elementVariantClass = useActionableVariantClass(props.variant);
 </script>
 
 <template>
-    <!-- <NuxtLink :class="[elementVariantClass, elementSizeClass]">
+    <NuxtLink :class="[elementVariantClass, elementSizeClass]">
         <slot />
-    </NuxtLink> -->
+    </NuxtLink>
 </template>
