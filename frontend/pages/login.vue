@@ -5,5 +5,5 @@ definePageMeta({
 </script>
 
 <template>
-    2. หน้า Login
+    หน้า Login
 </template>
