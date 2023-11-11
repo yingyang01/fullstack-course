@@ -49,4 +49,5 @@ defineEmits(['edit', 'more']);
         class="block w-full mt-5"
     >
         Load More
-</BaseButton></template>
+    </BaseButton>
+</template>
