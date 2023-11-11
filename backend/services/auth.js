@@ -35,9 +35,7 @@ export default ({ userRepo }, config) => {
 
         const status = await userRepo.createUser(auth.username, auth.password);
 
-        return {
-            status,
-        };
+        return status;
     }
 
     return {

@@ -30,6 +30,8 @@ export default ({ authService }, config) => {
 
         const status = await authService.register(body.username, body.password);
 
+        console.log('status', status);
+
         res.status(200).json({
             status,
         });

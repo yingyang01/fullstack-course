@@ -50,7 +50,7 @@ const onSubmit = handleSubmit(values => {
                     Add
                 </BaseButton>
             </span>
-            <BaseEditablePanel
+            <BaseFormPanel
                 :is-saving="isSubmitting"
                 @cancel="$emit('cancel')"
             />

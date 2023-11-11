@@ -1,6 +1,5 @@
 <script setup>
 import { useAuthStore } from '@/stores/auth';
-import * as yup from 'yup';
 
 definePageMeta({
     layout: 'center',

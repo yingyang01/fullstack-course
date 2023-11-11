@@ -1,11 +1,15 @@
 import { Schema } from 'mongoose';
+import mongooseBcrypt from 'mongoose-bcrypt';
 
 export default (connection) => {
-    const UserModel = connection.model('User', new Schema({
+    const UserSchema = new Schema({
         username: String,
-        password: String,
-    }));
+        password: { type: String, bcrypt: true },
+    });
 
+    UserSchema.plugin(mongooseBcrypt);
+
+    const UserModel = connection.model('User', UserSchema);
 
     async function getUser(username, password) {
         let user;
