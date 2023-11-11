@@ -14,8 +14,8 @@ Checkout following branches to learn step-by-step.
    2. ทำความรู้จัก TailwindCSS
    3. ติดตั้ง TailwindCSS 
    4. ลองสร้าง Components ด้วย TailwindCSS
-   5. ทำความรู้จัก <template>
-   6. ทำความรู้จัก <script setup>
+   5. ทำความรู้จัก `<template>`
+   6. ทำความรู้จัก `<script setup>`
 
 2. `frontend-02-pages-and-layouts`
    1. ทำความรู้จัก pages
@@ -61,74 +61,74 @@ Checkout following branches to learn step-by-step.
    3. ทำความรู้จัก event
 
 10. `frontend-10-component-experience-item`
-   1. ทำความรู้จักกับ moment
-   2. ทำความรู้จักกับ computed
+    1. ทำความรู้จักกับ moment
+    2. ทำความรู้จักกับ computed
 
 11. `frontend-11-component-experience-list`
-   1. สร้าง list สำหรับ experience
+    1. สร้าง list สำหรับ experience
 
 12. `frontend-12-component-portfolio-list`
-   1. สร้าง list สำหรับ portfolio
+    1. สร้าง list สำหรับ portfolio
 
 13. `frontend-13-page-login`
-   1. เราจะเริ่ม implement หน้า login กัน
+    1. เราจะเริ่ม implement หน้า login กัน
 
 14. `frontend-14-component-login-form`
-   1. รู้จักกับ vee-validate
-   2. รู้จักกับ middlewares
-   3. รู้จักกับ prism เพื่อจำลอง API ของ Open API (Swagger)
+    1. รู้จักกับ vee-validate
+    2. รู้จักกับ middlewares
+    3. รู้จักกับ prism เพื่อจำลอง API ของ Open API (Swagger)
 
 15. `frontend-15-component-input`
-   1. สร้าง input component
+    1. สร้าง input component
 
 16. `frontend-16-component-error-message`
-   1. สร้าง error message สำหรับแสดง error
+    1. สร้าง error message สำหรับแสดง error
 
 17. `frontend-17-state-management`
-   1. รู้จักกับสิ่งที่้เรียกว่า stage management
+    1. รู้จักกับสิ่งที่้เรียกว่า stage management
 
 18. `frontend-18-store-pinia`
-   1. pinia เข้ามาช่วยอะไร
+    1. pinia เข้ามาช่วยอะไร
 
 19. `frontend-19-store-auth`
-   1. เขียน store ของ auth
+    1. เขียน store ของ auth
 
 20. `frontend-20-component-skill-form`
-   1. สร้าง skill form ขึ้นมา
+    1. สร้าง skill form ขึ้นมา
 
 21. `frontend-21-component-editable`
-   1. สร้าง editable เพื่อใช้แสดง mode ของ view และ edit
+    1. สร้าง editable เพื่อใช้แสดง mode ของ view และ edit
 
 22. `frontend-22-component-input-tags`
-   1. สร้าง input tags component สำหรับใส่ค่าที่เป็น array
+    1. สร้าง input tags component สำหรับใส่ค่าที่เป็น array
 
 23. `frontend-23-store-profile-skill`
-   1. implement store สำหรับ profile โดยเริ่มจาก skill
+    1. implement store สำหรับ profile โดยเริ่มจาก skill
 
 24. `frontend-24-component-experience-form`
-   1. สร้าง form สำหรับ experience
+    1. สร้าง form สำหรับ experience
 
 25. `frontend-25-component-experience-form-field`
-   1. สร้าง form สำหรับ experience ในแต่ละก้อนย่อย
+    1. สร้าง form สำหรับ experience ในแต่ละก้อนย่อย
 
 26. `frontend-26-component-input-date`
-   1. สร้าง component input date
+    1. สร้าง component input date
 
 27. `frontend-27-component-select`
-   1. สร้าง component select
+    1. สร้าง component select
 
 28. `frontend-28-component-textarea`
-   1. สร้าง component textarea
+    1. สร้าง component textarea
 
 29. `frontend-29-store-profile-experience`
-   1. implement store สำหรับ experience
+    1. implement store สำหรับ experience
 
 30. `frontend-30-store-profile-portfolio`
-   1. implement store สำหรับ portfolio
+    1. implement store สำหรับ portfolio
 
 31. `frontend-31-page-portfolio-id`
-   1. implement portfolio page
-   2. ทำความรู้จัก carousel
+    1. implement portfolio page
+    2. ทำความรู้จัก carousel
 
 ### Backend Development
 
@@ -158,19 +158,19 @@ Checkout following branches to learn step-by-step.
    2. ย้าย business logic มาไว้ในนี้
    3. เขียน validation
 
-7.  `backend-07-repository-user`
+7. `backend-07-repository-user`
    1. สร้าง mongoose
    2. implement repository 
    3. เติม repository ใน dependency injection
    4. เปลี่ยนให้ service มาเรียกใช้ mongodb
 
-8.  `backend-08-repository-profile`
+8. `backend-08-repository-profile`
    1. สร้าง mongoose
    2. implement repository 
    3. เติม repository ใน dependency injection
    4. เปลี่ยนให้ service มาเรียกใช้ mongodb
 
-9.  `backend-09-repository-portfolio`
+9. `backend-09-repository-portfolio`
    1. สร้าง mongoose
    2. implement repository 
    3. เติม repository ใน dependency injection
