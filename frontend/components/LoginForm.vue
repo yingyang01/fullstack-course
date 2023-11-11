@@ -17,19 +17,19 @@ const onSubmit = handleSubmit(values => {
         class="space-y-3"
     >
         <div>
-            <input
-                v-bind="username"
+            <!-- TODO: 6. มาใช้กับ username -->
+            <!-- <BaseInput
                 name="username"
                 placeholder="Username"
-            />
+            /> -->
         </div>
         <div>
-            <input
-                v-bind="password"
+            <!-- TODO: 7. มาใช้กับ password -->
+            <!-- <BaseInput
                 name="password"
                 type="password"
                 placeholder="Password"
-            />
+            /> -->
         </div>
         <div>
             <BaseButton
