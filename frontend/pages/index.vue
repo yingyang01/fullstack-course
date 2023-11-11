@@ -34,23 +34,22 @@ function isExperienceVisible(index) {
     return true;
 }
 
-// TODO: 7. mock data ของ portfolios
-// const portfolios = [
-//     {
-//         "id": "507f191e810c19729de860ea",
-//         "cover": "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png",
-//         "images": [
-//             "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png"
-//         ],
-//         "skills": [
-//             "Management"
-//         ],
-//         "title": "Do something",
-//         "content": "Do something",
-//         "excerpt": "Do something",
-//         "publishedAt": "2023-08-01T00:00:00.000+07:00"
-//     }
-// ];
+const portfolios = [
+    {
+        "id": "507f191e810c19729de860ea",
+        "cover": "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png",
+        "images": [
+            "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png"
+        ],
+        "skills": [
+            "Management"
+        ],
+        "title": "Do something",
+        "content": "Do something",
+        "excerpt": "Do something",
+        "publishedAt": "2023-08-01T00:00:00.000+07:00"
+    }
+];
 </script>
 
 <template>
@@ -72,13 +71,12 @@ function isExperienceVisible(index) {
         />
     </section>
     <section class="mb-10">
-        <!-- TODO: 8. แสดงผล -->
-        <!-- <PortfolioList
+        <PortfolioList
             :portfolios="portfolios"
             :can-edit="true"
             :is-getting-portfolios="false"
             :has-more-portfolios="true"
             @more="console.log('clicked on more')"
-        /> -->
+        />
     </section>
 </template>

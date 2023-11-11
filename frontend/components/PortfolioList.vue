@@ -1,23 +1,18 @@
 <script setup>
-// TODO: 1. import moment มาเพราะต้องใช้แปลง string มาเป็น date
-// import moment from 'moment';
+import moment from 'moment';
 
-// TODO: 2. ออกแบบ props ซึ่งจะมีต่างจากเดิมตรงที่มี isGettingPortfolios เพราะจะได้เอามาแสดงสถานะ Loading
-// defineProps({
-//     portfolios: Array,
-//     canEdit: Boolean,
-//     isGettingPortfolios: Boolean,
-//     hasMorePortfolios: Boolean,
-// });
+defineProps({
+    portfolios: Array,
+    canEdit: Boolean,
+    isGettingPortfolios: Boolean,
+    hasMorePortfolios: Boolean,
+});
 
-// TODO: 3. ออกแบบ emits ให้กด more
-// defineEmits(['more']);
+defineEmits(['more']);
 </script>
 
 <template>
-    <!-- TODO: 4. แสดงผล -->
-    <!-- TODO: 5. BaseCard -->
-    <!-- <section class="mb-10">
+    <section class="mb-10">
         <h2 class="text-xl font-bold mb-3 flex space-x-2">
             <span>Portfolios</span>
             <BaseLink
@@ -88,5 +83,5 @@
         >
             Load More
         </BaseButton>
-    </section> -->
+    </section>
 </template>
