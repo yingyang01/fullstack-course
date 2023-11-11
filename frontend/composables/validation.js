@@ -31,8 +31,7 @@ import * as yup from 'yup';
 //     publishedAt: yup.date().typeError('Invalid Date').required().label('Published At'),
 // })
 
-// TODO: 1. สร้างกฏ validation สำหรับการ login
-// export const useLoginValidationSchema = () => yup.object({
-//     username: yup.string().required().label('Username'),
-//     password: yup.string().required().label('Password'),
-// });
+export const useLoginValidationSchema = () => yup.object({
+    username: yup.string().required().label('Username'),
+    password: yup.string().required().label('Password'),
+});

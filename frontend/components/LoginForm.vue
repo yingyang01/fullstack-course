@@ -1,22 +1,18 @@
 <script setup>
-// TODO: 2. emit พร้อมค่าจาก form
-// const emits = defineEmits(['submit']);
+const emits = defineEmits(['submit']);
 
-// TODO: 3. ใช้ composable จาก vee-validate เพื่อจัดการกับ form
-// TODO: 4. validate โดยใช้ yup
-// const { handleSubmit, isSubmitting } = useForm({
-//     validationSchema: useLoginValidationSchema(),
-//     validateOnInput: true,
-// });
+const { handleSubmit, isSubmitting } = useForm({
+    validationSchema: useLoginValidationSchema(),
+    validateOnInput: true,
+});
 
-// const onSubmit = handleSubmit(values => {
-//     emits('submit', values);
-// })
+const onSubmit = handleSubmit(values => {
+    emits('submit', values);
+})
 </script>
 
 <template>
-    <!-- TODO: 5. นำมาใช้งาน แต่จะยังไม่สามารถใช้งานได้ เดี๋ยวเรามาทำ Input กับ Error Message Component กันต่อ -->
-    <!-- <form
+    <form
         @submit="onSubmit"
         class="space-y-3"
     >
@@ -55,5 +51,5 @@
                 Logging In
             </BaseButton>
         </div>
-    </form> -->
+    </form>
 </template>
