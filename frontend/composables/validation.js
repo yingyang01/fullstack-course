@@ -1,5 +1,6 @@
 import * as yup from 'yup';
 
+// TODO: enable useSkillsValidationSchema
 // export const useSkillsValidationSchema = () => yup.object({
 //     skills: yup.array().min(1).of(yup.string().min(1)).label('skills'),
 // });
