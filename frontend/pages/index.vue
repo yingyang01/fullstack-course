@@ -54,8 +54,7 @@ const portfolios = [
 
 <template>
     <section class="mb-10">
-        <!-- TODO: 3. apply editable -->
-        <!-- <BaseEditable :edit-mode="false">
+        <BaseEditable :edit-mode="false">
             <template #view>
                 <SkillList
                     :skills="['a', 'b']"
@@ -70,7 +69,7 @@ const portfolios = [
                     @cancel="console.log('clicked on cancel')"
                 />
             </template>
-        </BaseEditable> -->
+        </BaseEditable>
     </section>
     <section class="mb-10">
         <ExperienceList
