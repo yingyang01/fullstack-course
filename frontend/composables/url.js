@@ -1,4 +1,3 @@
-// TODO: validate url
 export const useIsValidUrl = (string) => {
     try {
         new URL(string);
