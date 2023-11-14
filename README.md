@@ -108,22 +108,13 @@ Checkout following branches to learn step-by-step.
 24. `frontend-24-component-experience-form-field`
     1. สร้าง form สำหรับ experience ในแต่ละก้อนย่อย
 
-25. `frontend-25-component-input-date`
-    1. สร้าง component input date
-
-26. `frontend-26-component-select`
-    1. สร้าง component select
-
-27. `frontend-27-component-textarea`
-    1. สร้าง component textarea
-
-28. `frontend-28-store-profile-experience`
+25. `frontend-25-store-profile-experience`
     1. implement store สำหรับ experience
 
-29. `frontend-29-store-profile-portfolio`
+26. `frontend-26-store-profile-portfolio`
     1. implement store สำหรับ portfolio
 
-30. `frontend-30-page-portfolio-id`
+27. `frontend-27-page-portfolio-id`
     1. implement portfolio page
     2. ทำความรู้จัก carousel
 
