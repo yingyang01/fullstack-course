@@ -1,4 +1,11 @@
 <script setup>
+// TODO: 12. import stores to use
+// import { useAuthStore } from '@/stores/auth';
+// import { useProfileStore } from '@/stores/profile';
+
+// const authStore = useAuthStore();
+// const store = useProfileStore();
+
 useHead({
     title: 'Pichet Itngam\'s portfolios',
     meta: [
@@ -50,26 +57,30 @@ const portfolios = [
         "publishedAt": "2023-08-01T00:00:00.000+07:00"
     }
 ];
+
+// TODO: 13. call get profile action
+// await store.getProfile();
 </script>
 
 <template>
     <section class="mb-10">
-        <BaseEditable :edit-mode="true">
-            <template #edit>
-                <SkillForm
-                    :skills="['a', 'b']"
-                    @submit="console.log('submitted')"
-                    @cancel="console.log('clicked on cancel')"
-                />
-            </template>
+        <!-- TODO: 14. inject the actions and states into each parameter -->
+        <!-- <BaseEditable :edit-mode="store.skillsEditMode">
             <template #view>
                 <SkillList
-                    :skills="['a', 'b']"
-                    :can-edit="true"
-                    @edit="console.log('clicked on edit')"
+                    :skills="store.profile.overallSkills"
+                    :can-edit="authStore.canEdit"
+                    @edit="store.enterSkillsEditMode"
                 />
             </template>
-        </BaseEditable>
+            <template #edit>
+                <SkillForm
+                    :skills="store.profile.overallSkills"
+                    @cancel="store.enterSkillsViewMode"
+                    @submit="store.saveSkills"
+                />
+            </template>
+        </BaseEditable> -->
     </section>
     <section class="mb-10">
         <ExperienceList
