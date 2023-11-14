@@ -15,10 +15,15 @@ export default (connection) => {
         let user;
 
         try {
-            user = await UserModel.where({
+            const foundedUser = await UserModel.where({
                 username,
-                password,
             }).findOne();
+
+            const verifiedPassword = await foundedUser.verifyPassword(password);
+
+            if (verifiedPassword) {
+                user = foundedUser;
+            }
         } catch (error) {
             throw new Error(error);
         }

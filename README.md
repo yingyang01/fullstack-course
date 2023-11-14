@@ -99,34 +99,31 @@ Checkout following branches to learn step-by-step.
 21. `frontend-21-component-editable`
     1. สร้าง editable เพื่อใช้แสดง mode ของ view และ edit
 
-22. `frontend-22-component-input-tags`
-    1. สร้าง input tags component สำหรับใส่ค่าที่เป็น array
-
-23. `frontend-23-store-profile-skill`
+22. `frontend-22-store-profile-skill`
     1. implement store สำหรับ profile โดยเริ่มจาก skill
 
-24. `frontend-24-component-experience-form`
+23. `frontend-23-component-experience-form`
     1. สร้าง form สำหรับ experience
 
-25. `frontend-25-component-experience-form-field`
+24. `frontend-24-component-experience-form-field`
     1. สร้าง form สำหรับ experience ในแต่ละก้อนย่อย
 
-26. `frontend-26-component-input-date`
+25. `frontend-25-component-input-date`
     1. สร้าง component input date
 
-27. `frontend-27-component-select`
+26. `frontend-26-component-select`
     1. สร้าง component select
 
-28. `frontend-28-component-textarea`
+27. `frontend-27-component-textarea`
     1. สร้าง component textarea
 
-29. `frontend-29-store-profile-experience`
+28. `frontend-28-store-profile-experience`
     1. implement store สำหรับ experience
 
-30. `frontend-30-store-profile-portfolio`
+29. `frontend-29-store-profile-portfolio`
     1. implement store สำหรับ portfolio
 
-31. `frontend-31-page-portfolio-id`
+30. `frontend-30-page-portfolio-id`
     1. implement portfolio page
     2. ทำความรู้จัก carousel
 
