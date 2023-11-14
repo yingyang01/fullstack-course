@@ -71,12 +71,13 @@
                             </div>
                             <span class="inline-block px-1 py-1.5"> - </span>
                             <div class="flex-1">
-                                <BaseSelect
+                                <!-- TODO: 8. implement select -->
+                                <!-- <BaseSelect
                                     v-model="field.value.type"
                                     :name="`experiences[${idx}].type`"
                                     :options="experienceTypeOptions"
                                     placeholder="Select employment type"
-                                />
+                                /> -->
                             </div>
                         </div>
                     </div>
