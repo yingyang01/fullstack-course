@@ -80,14 +80,26 @@ await store.getProfile();
         </BaseEditable>
     </section>
     <section class="mb-10">
-        <ExperienceList
-            :experiences="experiences"
-            :can-edit="true"
-            :has-more-experiences="true"
-            :is-experience-visible="isExperienceVisible"
-            @edit="console.log('clicked on edit')"
-            @more="console.log('cliked on more')"
-        />
+        <!-- TODO: 10. show -->
+        <!-- <BaseEditable :edit-mode="true">
+            <template #view?>
+                <ExperienceList
+                    :experiences="experiences"
+                    :can-edit="true"
+                    :has-more-experiences="true"
+                    :is-experience-visible="isExperienceVisible"
+                    @edit="console.log('clicked on edit')"
+                    @more="console.log('cliked on more')"
+                />
+            </template>
+            <template #edit>
+                <ExperienceForm
+                    :experiences="experiences"
+                    @cancel="console.log('clicked on edit')"
+                    @submit="console.log('clicked on save')"
+                />
+            </template>
+        </BaseEditable> -->
     </section>
     <section class="mb-10">
         <PortfolioList
