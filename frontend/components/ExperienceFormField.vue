@@ -1,32 +1,26 @@
 <script setup>
-// TODO: 1. design props and emits
-// const props = defineProps({
-//     idx: Number,
-//     field: Object,
-// });
+const props = defineProps({
+    idx: Number,
+    field: Object,
+});
 
-// defineEmits(['remove'])
+defineEmits(['remove'])
 
-// TODO: 2. local state of modal
-// const showLogoModal = ref(false);
+const showLogoModal = ref(false);
 
-// TODO: 3. show
-// const experienceTypeOptions = useExperienceTypes();
+const experienceTypeOptions = useExperienceTypes();
 
-// TODO: 4. local state
-// const currentlyWorkHere = ref(props.field.value.end == null);
+const currentlyWorkHere = ref(props.field.value.end == null);
 
-// TODO: 5. handler function for modal
-// const onConfirm = () => {
-//     showLogoModal.value = false
-// }
+const onConfirm = () => {
+    showLogoModal.value = false
+}
 
-// TODO: 6. handling currently work here state
-// watch(currentlyWorkHere, (currentlyWorkHere) => {
-//     if (currentlyWorkHere) {
-//         props.field.value.end = null;
-//     }
-// });
+watch(currentlyWorkHere, (currentlyWorkHere) => {
+    if (currentlyWorkHere) {
+        props.field.value.end = null;
+    }
+});
 </script>
 
 <template>
@@ -39,8 +33,7 @@
                         class="w-10 h-10 rounded-md cursor-pointer"
                         @click="showLogoModal = true"
                     />
-                    <!-- TODO: 7. implement base modal -->
-                    <!-- <BaseModal
+                    <BaseModal
                         title="Company Logo"
                         v-model="showLogoModal"
                         @confirm="onConfirm"
@@ -52,7 +45,7 @@
                                 placeholder="http://example.com"
                             />
                         </div>
-                    </BaseModal> -->
+                    </BaseModal>
                 </div>
                 <div class="text-sm flex-1 md:text-base">
                     <BaseInput
@@ -71,20 +64,18 @@
                             </div>
                             <span class="inline-block px-1 py-1.5"> - </span>
                             <div class="flex-1">
-                                <!-- TODO: 8. implement select -->
-                                <!-- <BaseSelect
+                                <BaseSelect
                                     v-model="field.value.type"
                                     :name="`experiences[${idx}].type`"
                                     :options="experienceTypeOptions"
                                     placeholder="Select employment type"
-                                /> -->
+                                />
                             </div>
                         </div>
                     </div>
                     <div>
                         <div class="flex items-top space-x-1 mb-2">
-                            <!-- TODO: 8. implement input date -->
-                            <!-- <BaseInputDate
+                            <BaseInputDate
                                 :name="`experiences[${idx}].start`"
                                 placeholder="Start date"
                             />
@@ -99,7 +90,7 @@
                                 v-else
                             >
                                 Present
-                            </span> -->
+                            </span>
                         </div>
                         <div class="text-sm flex space-x-2 mb-2">
                             <input
@@ -113,14 +104,13 @@
                     </div>
 
                     <div class="py-3 md:hidden">
-                        <!-- TODO: 9. implement textarea -->
-                        <!-- <BaseTextarea
+                        <BaseTextarea
                             :name="`experiences[${idx}].detail`"
                             v-model="field.value.detail"
                             placeholder="Input detail of your achievements"
                             class="w-full"
                             rows="6"
-                        /> -->
+                        />
                     </div>
                     <BaseInputTags
                         :name="`experiences[${idx}].skills`"
@@ -129,14 +119,13 @@
                 </div>
             </div>
             <div class="hidden md:block md:flex-1">
-                <!-- TODO: 9. implement textarea -->
-                <!-- <BaseTextarea
+                <BaseTextarea
                     :name="`experiences[${idx}].detail`"
                     v-model="field.value.detail"
                     placeholder="Input detail of your achievements"
                     class="w-full"
                     rows="6"
-                /> -->
+                />
             </div>
             <BaseButton
                 class="block w-full mt-4 md:hidden"
