@@ -12,6 +12,7 @@ useHead({
     ],
 })
 
+// TODO: 10. remove experiences and isExperienceVisible
 const experiences = [{
     "logo": "https://cdn-images-1.medium.com/v2/resize:fit:400/1*r5OuqrQCyLCf11ecU1ccjA@2x.png",
     "title": "Senior Engineering Manager",
@@ -99,6 +100,26 @@ await store.getProfile();
                 />
             </template>
         </BaseEditable>
+        <!-- TODO: 9. show -->
+        <!-- <BaseEditable :edit-mode="store.experiencesEditMode">
+            <template #view>
+                <ExperienceList
+                    :experiences="store.profile.experiences"
+                    :can-edit="authStore.canEdit"
+                    :has-more-experiences="store.hasMoreExperiences"
+                    :is-experience-visible="store.isExperienceVisible"
+                    @edit="store.enterExperiencesEditMode"
+                    @more="store.increaseVisibleExperences(8)"
+                />
+            </template>
+            <template #edit>
+                <ExperienceForm
+                    :experiences="store.profile.experiences"
+                    @cancel="store.enterExperiencesViewMode"
+                    @submit="store.saveExperiences"
+                />
+            </template>
+        </BaseEditable> -->
     </section>
     <section class="mb-10">
         <PortfolioList
