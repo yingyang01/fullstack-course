@@ -4,6 +4,7 @@ export const useSkillsValidationSchema = () => yup.object({
     skills: yup.array().min(1).of(yup.string().min(1)).label('skills'),
 });
 
+// TODO: 3. validate the experience
 // export const useExperienceValidationSchema = () => yup.object({
 //     title: yup.string().required().label('Title'),
 //     logo: yup.string().nullable().url().label('Logo'),
