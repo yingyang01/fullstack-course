@@ -22,6 +22,7 @@ export const useExperiencesValidationSchema = () => yup.object({
     experiences: yup.array().min(1).of(useExperienceValidationSchema()).label('Experiences'),
 });
 
+// TODO: 5. enable portfolio validation
 // export const usePortfolioValidationSchema = () => yup.object({
 //     cover: yup.string().nullable().url().label('Logo'),
 //     images: yup.array().min(1).of(yup.string().url().label('Image')),
