@@ -1,4 +1,3 @@
-// TODO: 1. imeplement repository
 export function getPortfoliosAPI(page, limit) {
     return useFetchAPI('/portfolios', {
         query: {
