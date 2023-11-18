@@ -1,7 +1,11 @@
 import useHttpServer from '#app/servers/http/index'
 
-export default ({ authService }, config) => {
-    const httpServer = useHttpServer({ authService }, config);
+export default ({
+    authService,
+    // TODO: 5.1. get from outside
+    // profileService,
+}, config) => {
+    const httpServer = useHttpServer({ authService, profileService }, config);
 
     function run() {
         httpServer.run();

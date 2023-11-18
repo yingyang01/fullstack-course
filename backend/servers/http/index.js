@@ -5,10 +5,15 @@ import useProfileHandlers from '#app/servers/http/handlers/profile';
 import usePortfolioHandlers from '#app/servers/http/handlers/portfolio';
 import { errorHandler } from '#app/servers/http/middlewares/errors';
 
-export default ({ authService }, config) => {
+export default ({
+    authService,
+    // TODO: 6. Get from outside
+    // profileService,
+}, config) => {
     const app = express();
     const auth = useAuthHandlers({ authService }, config.http);
-    const profile = useProfileHandlers({}, config.http);
+    // TODO: 7. inject into the handler
+    const profile = useProfileHandlers({ profileService }, config.http);
     const portfolio = usePortfolioHandlers({}, config.http);
 
     app.use(express.json());
