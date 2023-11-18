@@ -1,25 +1,14 @@
 export const errorHandler = (err, req, res, next) => {
-    if (err.name && err.name == 'ValidationError') {
-        res.status(400).json({
-            error: err.message
-        });
-        return;
-    }
+    // TODO: 22. log an error 
+    // console.log(err.stack);
 
-    if (err.name && err.name == 'UnauthorizedError') {
-        res.status(401).json({
-            error: err.message
-        });
-        return;
-    }
+    // if (res.headersSent) {
+    //     return next(err);
+    // }
 
-    console.log(err.stack);
-
-    if (res.headersSent) {
-        return next(err);
-    }
-
-    res.status(500).json({
-        message: 'Something went wrong',
-    });
+    // TODO: 23. return 500 with json response
+    // TODO: 24. explain status code
+    // res.status(500).json({
+    //     message: 'Something went wrong',
+    // });
 }

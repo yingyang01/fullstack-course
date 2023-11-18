@@ -1,13 +1,17 @@
-import useHttpServer from '#app/servers/http/index'
+// TODO: 9. import from the API layer
+// import useHttpServer from '#app/servers/http/index'
 
-export default ({ profileService, authService, portfolioService }, config) => {
-    const httpServer = useHttpServer({ profileService, authService, portfolioService }, config);
+export default ({ }, config) => {
+    // TODO: 10. use HTTP server to setup
+    // const httpServer = useHttpServer({}, config);
 
-    function run() {
-        httpServer.run();
-    }
+    // TODO: 11. เขียนว่าถ้าข้างนอกสั่งรัน ให้ทำอะไร
+    // function run() {
+    //     httpServer.run();
+    // }
 
-    return {
-        run,
-    }
+    // TODO: 12. return
+    // return {
+    //     run,
+    // }
 }
