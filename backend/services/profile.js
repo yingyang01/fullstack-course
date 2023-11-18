@@ -1,6 +1,9 @@
 import { useProfileValidationSchema } from '#app/utils/validation';
 
-export default ({ }) => {
+export default ({
+    // TODO: 8. get from outside
+    // profileRepo
+}) => {
     const validateSchema = useProfileValidationSchema();
 
     function sanitizeProfile(profile) {
@@ -18,9 +21,22 @@ export default ({ }) => {
     }
 
     async function getProfile() {
+        // TODO: 9. use repo
+        let profile;
+
+
+        // profile = await profileRepo.getProfile();
+
+        // if (!profile) {
+        //     return {
+        //         overallSkills: [],
+        //         experiences: [],
+        //     };
+        // }
+
         return {
-            overallSkills: [],
-            experiences: [],
+            overallSkills: profile.overallSkills ?? [],
+            experiences: profile.experiences ?? [],
         };
     }
 
@@ -31,8 +47,14 @@ export default ({ }) => {
 
         const sanitizedProfile = sanitizeProfile(profile);
 
+        // TODO: 10. use repo
+
+        // const updatedProfile = await profileRepo.updateProfile(sanitizedProfile);
+
+        // id = updatedProfile.id;
+
         return {
-            id: '1234',
+            id,
         };
     }
 

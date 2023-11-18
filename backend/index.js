@@ -3,7 +3,11 @@ import useServers from '#app/di/servers';
 import useServices from '#app/di/services';
 import useRepos from '#app/di/repositories';
 
-const { userRepo } = useRepos({
+const {
+    userRepo,
+    // TODO: 1. get profile repo
+    // profileRepo,
+} = useRepos({
     db: {
         mongo: {
             uri: process.env.MONGO_URI,
@@ -17,6 +21,8 @@ const {
     portfolioService,
 } = useServices({
     userRepo,
+    // TODO: 2. inject profile repo
+    // profileRepo,
 }, {
     jwt: {
         secret: process.env.JWT_SECRET,
