@@ -2,7 +2,10 @@ import express from 'express';
 import asyncHandler from 'express-async-handler';
 import { useJwt } from '#app/servers/http/middlewares/jwt'
 
-export default ({ }, config) => {
+export default ({
+    // TODO: 10. get portfolioService
+    // portfolioService,
+}, config) => {
 
     function router() {
         const router = express.Router()
@@ -17,61 +20,59 @@ export default ({ }, config) => {
     }
 
     async function getPortfolios(req, res) {
-        res.status(200).json({
-            data: [
-                {
-                    id: "string",
-                    cover: "string",
-                    images: [
-                        "string"
-                    ],
-                    skills: [
-                        "string"
-                    ],
-                    title: "string",
-                    content: "string",
-                    excerpt: "string",
-                    publishedAt: "string"
-                }
-            ],
-        });
+        // TODO: 11. get portfolios
+        // const query = req.query;
+
+        // const portfolios = await portfolioService.getPortfolios(query.page, query.limit);
+
+        // res.status(200).json({
+        //     data: portfolios,
+        // });
     }
 
     async function getPortfolio(req, res) {
-        res.status(200).json({
-            data: {
-                id: "string",
-                cover: "string",
-                images: [
-                    "string"
-                ],
-                skills: [
-                    "string"
-                ],
-                title: "string",
-                content: "string",
-                excerpt: "string",
-                publishedAt: "string"
-            },
-        });
+        // TODO: 12. get portfolio
+        // const params = req.params;
+
+        // const portfolio = await portfolioService.getPortfolio(params.id);
+
+        // res.status(200).json({
+        //     data: portfolio,
+        // });
     }
 
     async function createPortfolio(req, res) {
-        res.status(200).json({
-            status: true,
-        });
+        // TODO: 13. create portfolio
+        // const body = req.body;
+
+        // const portfolio = await portfolioService.createPortfolio(body);
+
+        // res.status(200).json({
+        //     status: (portfolio) ? true : false,
+        // });
     }
 
     async function updatePortfolio(req, res) {
-        res.status(200).json({
-            status: true,
-        });
+        // TODO: 14. update portfolio
+        // const params = req.params;
+        // const body = req.body;
+
+        // const portfolio = await portfolioService.updatePortfolio(params.id, body);
+
+        // res.status(200).json({
+        //     status: (portfolio) ? true : false,
+        // });
     }
 
     async function deletePortfolio(req, res) {
-        res.status(200).json({
-            status: true,
-        });
+        // TODO: 15. delete portfolio
+        // const params = req.params;
+
+        // const result = await portfolioService.deletePortfolio(params.id);
+
+        // res.status(200).json({
+        //     status: result,
+        // });
     }
 
     return {
